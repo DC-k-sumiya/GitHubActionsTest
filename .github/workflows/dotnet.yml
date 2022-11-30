@@ -19,4 +19,4 @@ jobs:
       with:
         dotnet-version: 6.0.x
     - name: Assign author to issue
-    - uses: technote-space/assign-author@v1
+      uses: technote-space/assign-author@v1

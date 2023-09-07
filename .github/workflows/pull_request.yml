@@ -17,4 +17,4 @@ jobs:
       - name: Change title
         run: |
           title="[WIP]${{ github.event.pull_request.title }}"
-          gh pr edit ${{ github.event.pull_request.number }} --title "${title}"
+          gh pr edit ${{ github.event.pull_request.number }} --title "井上かっけけえええ"

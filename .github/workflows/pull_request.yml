@@ -1,0 +1,20 @@
+on:
+  pull_request:
+    types: [opened]
+name: pull request open
+
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+jobs:
+  job:
+    runs-on: ubuntu-latest
+    steps:  
+      - name: checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Change title
+        run: |
+          title= "[WIP]" +  ${{ github.event.pull_request.title }}
+          gh pr edit ${{ github.event.pull_request.number }} --title "${title}"
